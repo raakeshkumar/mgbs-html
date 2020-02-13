@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Momsbeyond">
+  <meta name="description" content="Momsbeyond">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <title>MGBS | LOGIN</title>
+  <!--StyleSheet-->
+  <link type="text/css" rel="stylesheet" href="./assets/css/animate.min.css">
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+  <!-- Script-->
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+<body>
+
+  <div class="layoutWrapper">
+    <aside id="aside">
+      <div class="brand">
+        <a href="dashboard.html" class="brand-lg">
+          <img src="./assets/images/brand/brand.svg" alt="MGBS" class="img-fluid">
+        </a>
+        <a href="dashboard.html" class="brand-sm">
+          <img src="./assets/images/brand/brand1.svg" alt="MGBS" class="img-fluid">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="dashboard.html"><i class="icon-home"></i> <span>Home</span></a>
+          </li>
+          <li class="active">
+            <a href="all-questionnaires.html"><i class="icon-note-list"></i> <span>Questionnaires</span></a>
+          </li>
+          <li>
+            <a href="all-responses.html"><i class="icon-list-outline"></i> <span>Responses</span></a>
+          </li>
+          <li>
+              <a href="all-users.html"><i class="icon-people-outline"></i> <span>Users</span></a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="bottomNav">
+        <li>
+          <a href="javascript:void(0);"><i class="icon-support"></i> <span>Need Help?</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="icon-power-off"></i> <span>Logout</span></a>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <section class="mainWrapper">
+        <header class="sectionHeader">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <a href="javascript:void(0);" class="toggleNav" id="navToggleButton">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <div class="col">
+              <h2>Create A New Questionnaire</h2>
+            </div>
+            <div class="col-12 col-md-auto">
+              <button class="button button-danger button-rounded button-shadow fw700 my-3 my-md-0"><i
+                  class="icon-support mr-1"></i> Need help?</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="questionnariesWrapper">
+          <div class="createFormWrap mb-2">
+            <a href="all-questionnaires.html" class="backButton button button-theme"><i
+                class="icon-arrow-left p-t2"></i></a>
+            <div class="row">
+              <div class="col-12 col-lg">
+                <div class="form-group">
+                  <label>Questionnaire Name</label>
+                  <h3 class="_addedInto mb-0">Item Nonresponse & Interview Timings</h3>
+                </div>
+              </div>
+              <div class="col-12 col-lg-auto">
+                <div class="form-group d-flex">
+                  <div class="_setBlk">
+                    <label>Sets</label>
+                    <h3 class="_addedInto mb-0">03</h3>
+                  </div>
+                  <div class="_setBlk">
+                    <label>Questions</label>
+                    <h3 class="_addedInto mb-0">08</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="createFormWrap questionFormBlock mb-2">
+            <h3>Questions Set: 1</h3>
+            <div class="_quesListItem">
+              <div class="row gutters-10">
+                <div class="col-12 col-md-8 col-lg-9">
+                  <div class="form-group">
+                    <label>Question 1</label>
+                    <input type="text" class="form-control" placeholder="Add Question Here">
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <label>Expected Answer Length</label>
+                    <input type="number" class="form-control" min="0">
+                  </div>
+                </div>
+              </div>
+              <a href="javascript:void(0);" class="_delete">
+                <i class="icon-trash"></i>
+              </a>
+            </div>
+            <div class="_quesListItem">
+              <div class="row gutters-10">
+                <div class="col-12 col-md-8 col-lg-9">
+                  <div class="form-group">
+                    <label>Question 2</label>
+                    <input type="text" class="form-control" placeholder="Add Question Here">
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <label>Expected Answer Length</label>
+                    <input type="number" class="form-control" min="0">
+                  </div>
+                </div>
+              </div>
+              <a href="javascript:void(0);" class="_delete">
+                <i class="icon-trash"></i>
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="addQuestionButton"><i class="icon-add-circle ibv mr-2"></i> <span
+                class="ibv">Add
+                Question</span></a>
+          </div>
+          <div class="createFormWrap questionFormBlock mb-2">
+            <h3>Questions Set: 2</h3>
+            <div class="_quesListItem">
+              <div class="row gutters-10">
+                <div class="col-12 col-md-8 col-lg-9">
+                  <div class="form-group">
+                    <label>Question 1</label>
+                    <input type="text" class="form-control" placeholder="Add Question Here">
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <label>Expected Answer Length</label>
+                    <input type="number" class="form-control" min="0">
+                  </div>
+                </div>
+              </div>
+              <!-- <a href="javascript:void(0);" class="_delete">
+                  <i class="icon-trash"></i>
+                </a> -->
+            </div>
+            <a href="javascript:void(0);" class="addQuestionButton"><i class="icon-add-circle ibv mr-2"></i> <span
+                class="ibv">Add
+                Question</span></a>
+          </div>
+          <div class="createFormWrap questionFormBlock mb-2">
+            <h3>Questions Set: 3</h3>
+            <div class="_quesListItem">
+              <div class="row gutters-10">
+                <div class="col-12 col-md-8 col-lg-9">
+                  <div class="form-group">
+                    <label>Question 1</label>
+                    <input type="text" class="form-control" placeholder="Add Question Here">
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <label>Expected Answer Length</label>
+                    <input type="number" class="form-control" min="0">
+                  </div>
+                </div>
+              </div>
+              <!-- <a href="javascript:void(0);" class="_delete">
+                    <i class="icon-trash"></i>
+                  </a> -->
+            </div>
+            <a href="javascript:void(0);" class="addQuestionButton"><i class="icon-add-circle ibv mr-2"></i> <span
+                class="ibv">Add
+                Question</span></a>
+          </div>
+          <div class="actionButtons my-4">
+            <button type="button" onclick="window.location.href='create-questionnaires-step3.html'"
+              class="button button-theme button-rounded button-shadow text-uppercase mt-2">continue</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+
+  <!-- Javascripts -->
+  <script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/validation/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+  <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="./assets/js/theme.js"></script>
+
+</body>
+
+</html>

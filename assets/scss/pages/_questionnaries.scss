@@ -1,0 +1,228 @@
+.questionnariesWrapper {
+  .createFormWrap {
+    @include padding(30);
+    background-color: $white;
+
+    @include media('<=767px') {
+      @include padding(15);
+    }
+
+    .backButton {
+      @include padding(0);
+      @include margin-top(-30);
+      @include margin-bottom(25);
+      display: $b;
+      text-align: center;
+      width: 42px;
+
+      @include media('<=767px') {
+        @include margin-top(-15);
+      }
+    }
+
+    .form-group {
+      @include margin-bottom(20);
+
+      label {
+        display: $b;
+        font-weight: 700;
+        color: $theme-grey;
+        @include margin-bottom(5);
+        @include fontsize(12);
+
+        &.error {
+          font-weight: 400;
+          color: $theme-danger;
+          @include margin(5 0 0);
+        }
+      }
+
+      .form-control {
+        @include radius(2px);
+        @include fontsize(14);
+        background-color: darken($white, 5%);
+
+        @include input-placeholder {
+          color: $theme-grey;
+        }
+
+        &:focus {
+          border-color: $theme-dark;
+          @include box-shadow(0 0 0 4px darken($white, 5%));
+        }
+
+        &.error {
+          border-color: $theme-danger;
+        }
+
+        &.valid {
+          border-color: $theme-action;
+        }
+      }
+
+      ._datePickerInput {
+        .form-control {
+          @include padding-right(40);
+          @include bg-norepeat('#{$url}calendar-outline.svg', darken($white, 5%));
+          background-position: calc(100% - 10px) center;
+          background-size: 18px;
+        }
+      }
+
+      ._addedInto {
+        @include fontsize(32);
+        line-height: 1;
+        letter-spacing: -0.5px;
+
+        @include media('<=767px') {
+          @include fontsize(24);
+        }
+      }
+
+      ._setBlk {
+        @include padding(5 30);
+        @include pos(r, null);
+        display: $ib;
+
+        &:first-child {
+          @include padding-left(0);
+
+          &:after {
+            display: $n;
+          }
+        }
+
+        &:last-child {
+          @include padding-right(0)
+        }
+
+        &:after {
+          content: "";
+          @include pos(ab, 0 null 0 0);
+          border-left: 1px solid darken($white, 10%);
+        }
+      }
+    }
+
+    &.questionFormBlock {
+      &.disabled {
+        &>* {
+          pointer-events: $n;
+          @include filter(blur(7px));
+        }
+      }
+
+      h3 {
+        @include fontsize(24);
+        font-weight: 700;
+        color: $theme-dark;
+        @include margin-bottom(20);
+
+        @include media('<=767px') {
+          @include fontsize(20);
+        }
+      }
+
+      .badge {
+        @include radius(30px);
+        @include fontsize(16);
+        @include padding(10 15);
+        font-weight: 500;
+
+        &.badge-success {
+          background-color: #cefcf1;
+          color: $theme-success;
+        }
+      }
+
+      ._quesListItem {
+        @include padding-right(70);
+        @include pos(r, null);
+
+        ._delete {
+          @include pos(ab, 24px 10px null null);
+          @include fontsize(22);
+          color: $theme-default;
+
+          &:hover {
+            color: $theme-default;
+          }
+        }
+      }
+
+      ._addedQuestion {
+        @include padding(15 20);
+        border: 1px solid darken($white, 10%);
+
+        @include media('<=767px') {
+          @include padding(15);
+        }
+
+        label {
+          display: $b;
+          font-weight: 700;
+          color: $theme-grey;
+          @include margin-bottom(5);
+          @include fontsize(12);
+
+          &.error {
+            font-weight: 400;
+            color: $theme-danger;
+            @include margin(5 0 0);
+          }
+        }
+
+        h6 {
+          @include margin-bottom(0);
+          @include fontsize(18);
+
+          @include media('<=767px') {
+            @include fontsize(16);
+          }
+        }
+
+        ._ansBlk {
+          @include margin-top(15);
+
+          .form-control {
+            background-color: darken($white, 5%);
+            border: 1px solid darken($white, 5%);
+            height: 42px;
+            @include fontsize(14);
+
+            &:focus {
+              border-color: $theme-dark;
+              @include box-shadow(0 0 0 4px darken($white, 5%));
+            }
+          }
+        }
+      }
+
+      .addQuestionButton {
+        color: $theme;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include fontsize(14);
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.datepicker {
+  .datepicker-days {
+    table {
+      tr {
+
+        td,
+        th {
+          @include padding(5 10);
+        }
+      }
+    }
+  }
+}

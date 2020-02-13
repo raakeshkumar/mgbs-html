@@ -1,0 +1,69 @@
+.settingWrapper {
+  background-color: $white;
+
+  .formWrap {
+    @include padding(30);
+    // border-bottom: 1px dashed darken($white, 15%);
+    background-color: $white;
+
+    @include media('<=767px') {
+      @include padding(20 15);
+    }
+
+    &:last-of-type {
+      border-bottom: $n;
+    }
+
+    h6 {
+      @include margin-bottom(20);
+      @include fontsize(16);
+      color: $theme-dark;
+      font-weight: 700;
+    }
+
+    .form-group {
+      @include margin-bottom(20);
+
+      label {
+        display: $b;
+        font-weight: 700;
+        color: $theme-grey;
+        @include margin-bottom(5);
+        @include fontsize(12);
+      }
+
+      .form-control {
+        @include radius(2px);
+        @include fontsize(14);
+        background-color: darken($white, 5%);
+
+        @include input-placeholder {
+          color: $theme-grey;
+        }
+
+        &:focus {
+          border-color: $theme-dark;
+          @include box-shadow(0 0 0 4px darken($white, 5%));
+        }
+
+        &.error {
+          border-color: $theme-danger;
+        }
+
+        &.valid {
+          border-color: $theme-action;
+        }
+      }
+    }
+  }
+
+  ._hrLine {
+    background-image: linear-gradient(to right, rgba($theme-grey, 0.3) 33%, rgba($white, 0) 0%);
+    background-position: bottom;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+    display: $b;
+    width: 100%;
+  }
+}

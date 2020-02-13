@@ -1,0 +1,276 @@
+.pageFilterLayout {
+  @include margin-bottom(20);
+
+  @include media('<=767px') {
+    @include margin-bottom(10);
+  }
+
+  .filterNavWrap {
+    @include padding(10 0);
+    @include pos(r, null);
+    border-top: 2px dashed darken($white, 10%);
+    border-bottom: 2px dashed darken($white, 10%);
+
+    @include media('<=575px') {
+      border-bottom: $n;
+      @include padding-bottom(0);
+    }
+
+    .tabNav {
+      @include media('<=575px') {
+        border-bottom: 2px dashed darken($white, 10%);
+        @include padding-bottom(10);
+        @include margin-bottom(15);
+      }
+
+      &>li {
+        display: $ib;
+
+        a {
+          font-weight: 500;
+          color: $theme-grey;
+          @include pos(r, null);
+
+          @include media('<=575px') {
+            @include padding(5 15);
+          }
+
+          &:before {
+            content: "";
+            height: 2px;
+            background-color: $theme-dark;
+            @include pos(ab, null 0 -12px 0);
+            @include transition(all 0.4s);
+            @include opacity(0);
+          }
+
+          &:hover {
+            color: $theme-dark;
+          }
+
+          &.active {
+            color: $theme-dark;
+
+            &:before {
+              @include opacity(1);
+            }
+          }
+        }
+      }
+    }
+
+    ._actionButtons {
+      &>a {
+        @include square(40px);
+        @include radius(6px);
+        @include fontsize(18);
+        @include margin(0 5);
+        @include pos(r, null);
+        background-color: darken($white, 10%);
+        display: $ib;
+        text-align: center;
+        line-height: 40px;
+        color: $theme-dark;
+
+        &:hover,
+        &.active {
+          background-color: $theme;
+          color: darken($white, 10%);
+        }
+
+        ._filterCount {
+          @include pos(ab, -7px -7px null null);
+          @include square(15px);
+          @include radius(50%);
+          @include fontsize(10);
+          line-height: 15px;
+          background-color: $theme-danger;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .filterFormWrap {
+    background-color: $white;
+    display: $n;
+    @include padding(30);
+    @include box-shadow(0, 2px, 24px, rgba($black, 0.1));
+
+    h5 {
+      @include fontsize(18);
+    }
+
+    .form-group {
+      @include margin-bottom(20);
+
+      label {
+        display: $b;
+        font-weight: 700;
+        color: $theme-grey;
+        @include margin-bottom(5);
+        @include fontsize(12);
+      }
+
+      .form-control {
+        height: 42px;
+        border: 1px solid darken($white, 10%);
+        background-color: darken($white, 5%);
+        @include fontsize(14);
+        @include radius(2px);
+
+        @include input-placeholder {
+          color: $theme-grey;
+        }
+
+        &:focus {
+          border-color: $theme-dark;
+          @include box-shadow(0 0 0 4px darken($white, 5%));
+        }
+      }
+    }
+  }
+}
+
+.tableLayoutWrapper {
+  .table {
+    border-collapse: separate;
+    border-spacing: 0 3px;
+
+    thead {
+      background-color: $white;
+
+      tr {
+        th {
+          @include fontsize(12);
+          @include padding(10 20);
+          white-space: nowrap;
+          font-weight: 500;
+          color: $theme-grey;
+
+          ._sort {
+            float: right;
+            color: inherit;
+            @include margin-left(10);
+
+            &:hover {
+              color: $theme;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: $white;
+
+        td {
+          @include fontsize(14);
+          @include padding(10 20);
+          @include pos(r, null);
+          vertical-align: middle;
+          background-color: $white;
+
+          &:first-child {
+            @include padding-left(30);
+          }
+
+          &:last-child {
+            @include padding-right(30);
+          }
+
+          .floatingBadge {
+            @include padding(3 5);
+            @include pos(ab, 0 null null 0);
+            @include margin(0);
+            line-height: 1;
+            font-size: 8px;
+            letter-spacing: 1px;
+            background-color: darken($white, 5%);
+            font-weight: 700;
+
+            &.success {
+              color: $theme-success;
+            }
+
+            &.danger {
+              color: $theme-danger;
+            }
+
+            &.warning {
+              color: $theme-warning;
+              background-color: lighten($theme-warning, 20%);
+            }
+          }
+
+          .actionDropdown {
+            @include pos(r, null);
+
+            &>a {
+              color: $theme-grey;
+              @include fontsize(20);
+
+              &:hover {
+                color: $theme;
+              }
+            }
+
+            .dropdown-menu {
+              @include radius(0);
+              @include padding(0);
+
+              &>.dropdown-item {
+                @include fontsize(14);
+                @include padding-top(10);
+                @include padding-bottom(10);
+
+                &:hover {
+                  background-color: $theme;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.alertModal {
+  .modal-dialog {
+    max-width: 430px;
+  }
+
+  .bodyWrap {
+    @include padding(30 50);
+
+    @include media('<=575px') {
+      @include padding(10 20);
+    }
+
+    ._icon {
+      display: $ib;
+      @include fontsize(50);
+      @include margin-bottom(20);
+
+      &.warning {
+        color: $theme-warning;
+      }
+
+      &.success {
+        color: $theme-success;
+      }
+
+      &.danger {
+        color: $theme-danger;
+      }
+    }
+
+    p {
+      @include fontsize(20);
+    }
+  }
+}

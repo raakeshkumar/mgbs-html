@@ -1,0 +1,222 @@
+main {
+  min-height: 100%;
+  @include experimental-value(min-height, calc(100vh - 510px));
+}
+
+.container {
+  max-width: 1170px;
+}
+
+.button {
+  height: 42px;
+  line-height: 40px;
+  display: $ib;
+  text-align: center;
+  outline: $n !important;
+  overflow: hidden;
+  border: 1px solid transparent;
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 500;
+  @include pos(r, null);
+  @include transition(all 0.5s);
+  @include padding(0 15);
+
+  &.spacing {
+    letter-spacing: 0.5px;
+  }
+
+  &-lg {
+    height: 52px;
+    line-height: 50px;
+  }
+
+  &-sm {
+    height: 30px;
+    line-height: 28px;
+    @include fontsize(12);
+  }
+
+  &-xs {
+    height: 24px;
+    line-height: 22px;
+    @include fontsize(12);
+  }
+
+  &-x-md {
+    @include padding-left(30);
+    @include padding-right(30);
+  }
+
+  &-x-5 {
+    @include padding-left(5);
+    @include padding-right(5);
+  }
+
+  &-x-10 {
+    @include padding-left(10);
+    @include padding-right(10);
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-rounded {
+    @include radius(4px);
+  }
+
+  &-block {
+    display: $b;
+    width: 100%;
+  }
+
+  &-default {
+    background-color: $theme-grey;
+    color: $white;
+
+    &:hover {
+      background-color: darken($theme-grey, 12%);
+      color: $white;
+    }
+
+    &.button-border {
+      background-color: transparent;
+      border-color: $theme-grey;
+      color: $theme-grey;
+
+      &:hover {
+        background-color: $theme-grey;
+        color: $white;
+      }
+    }
+  }
+
+  &-theme {
+    background-color: $theme;
+    color: $white;
+
+    &:hover {
+      background-color: darken($theme, 12%);
+      color: $white;
+    }
+
+    &.button-border {
+      background-color: transparent;
+      border-color: $theme;
+      color: $theme-warning;
+
+      &:hover {
+        background-color: $theme;
+        color: $white;
+      }
+    }
+  }
+
+  &-warning {
+    background-color: $theme-warning;
+    color: $white;
+
+    &:hover {
+      background-color: darken($theme-warning, 12%);
+      color: $white;
+    }
+
+    &.button-border {
+      background-color: transparent;
+      border-color: $theme-warning;
+      color: $theme-warning;
+
+      &:hover {
+        background-color: $theme-warning;
+        color: $white;
+      }
+    }
+
+    &.button-shadow {
+      @include box-shadow(0 4px 8px 0 rgba($theme-warning, 0.35));
+    }
+  }
+
+  &-danger {
+    background-color: $theme-danger;
+    color: $white;
+
+    &:hover {
+      background-color: darken($theme-danger, 12%);
+      color: $white;
+    }
+
+    &.button-border {
+      background-color: transparent;
+      border-color: $theme-danger;
+      color: $theme-danger;
+
+      &:hover {
+        background-color: $theme-danger;
+        color: $white;
+      }
+    }
+
+    &.button-shadow {
+      @include box-shadow(0 4px 8px 0 rgba($theme-danger, 0.35));
+    }
+  }
+
+  &-success {
+    background-color: $theme-success;
+    color: $white;
+
+    &:hover {
+      background-color: darken($theme-success, 12%);
+      color: $white;
+    }
+
+    &.button-border {
+      background-color: transparent;
+      border-color: $theme-success;
+      color: $theme-success;
+
+      &:hover {
+        background-color: $theme-success;
+        color: $white;
+      }
+    }
+
+    &.button-shadow {
+      @include box-shadow(0 4px 8px 0 rgba($theme-success, 0.3));
+    }
+  }
+
+  &-shadow {
+    @include box-shadow(0 4px 8px 0 rgba($theme, 0.27));
+  }
+
+  &-curved {
+    @include radius(16px 0);
+  }
+
+  &-min-70 {
+    min-width: 70px;
+  }
+
+  &-min-100 {
+    min-width: 100px;
+  }
+
+  &-min-140 {
+    min-width: 140px;
+  }
+}
+
+.font14 {
+  font-size: 14px !important;
+}
+
+.font16 {
+  font-size: 16px !important;
+}
+
+.size140 {
+  font-size: 140%;
+}

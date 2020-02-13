@@ -1,0 +1,42 @@
+// THEME AND COLOR
+$black: #000000 !default;
+$white: #ffffff !default;
+$theme-default: #2B2D3A !default;
+$theme: #14B4F0 !default;
+$theme-dark: #003C6E !default;
+$theme-danger: #FF5E5E !default;
+$theme-warning: #FF8C32 !default;
+$theme-success: #01C092 !default;
+$theme-action: #02B887 !default;
+$theme-grey: #8793A9 !default;
+
+$theme-facebook: #3b5998 !default;
+$theme-twitter: #00acee !default;
+$theme-instagram: #3f729b !default;
+$theme-youtube: #c4302b !default;
+
+// PATH & FONT NAME
+$font : 'Roboto' !default;
+$font-alt: 'AirbnbCerealApp' !default;
+$imgpath : "../images/" !default;
+$font-path : "../fonts" !default;
+$iconFontPath : "../fonts/icons" !default;
+$url : $imgpath !default;
+// FONTS and TEXT STYLE
+$fontnormal : 16px !default;
+$fontsmall : 14px !default;
+$lineheight : 1.7 !default;
+$spacing : 5px !default;
+// Display
+$in : inline !default;
+$ib : inline-block !default;
+$b : block !default;
+$t : table !default;
+$cell : table-cell !default;
+$n : none !default;
+//TRANSITION EFFECT
+$trasition_all : all 300ms ease-in-out !default;
+// Margin
+$a : auto !default;
+$auto : auto auto !default;
+$za : 0 auto !default;

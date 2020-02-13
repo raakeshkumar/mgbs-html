@@ -1,0 +1,127 @@
+.initialFormWrapper {
+  background-color: $white;
+  min-height: 100%;
+  @include experimental-value(min-height, calc(100vh));
+
+  .logoText {
+    display: $ib;
+    font-family: $font-alt;
+    @include margin(20 0);
+    @include fontsize(28);
+
+    @include min-screen-height('750px') {
+      @include margin-bottom(100);
+    }
+
+    @include media('>=992px') {
+      @include margin-bottom(100);
+    }
+
+    @include media('<=991px') {
+      @include margin-bottom(20);
+    }
+  }
+
+  h1 {
+    @include fontsize(32);
+    @include margin-bottom(25);
+    color: $theme;
+    font-weight: 700;
+
+    @include media('<=767px') {
+      @include fontsize(26);
+    }
+  }
+
+  h2 {
+    @include fontsize(32);
+    font-weight: 700;
+
+    @include media('<=767px') {
+      @include fontsize(26);
+    }
+  }
+
+  p {
+    @include fontsize(14);
+  }
+
+  .formWrap {
+    max-width: 430px;
+    margin: $za;
+
+    .form-group {
+      @include margin-bottom(20);
+
+      label {
+        display: block;
+        color: $theme-grey;
+        font-weight: 700;
+        @include fontsize(12);
+        @include margin-bottom(5);
+
+        &.error {
+          font-weight: 400;
+          color: $theme-danger;
+          @include margin(5 0 0);
+        }
+      }
+
+      .form-control {
+        height: 42px;
+        border: 1px solid darken($white, 8%);
+        background-color: darken($white, 5%);
+        color: $theme-default;
+        @include fontsize(14);
+        @include radius(2px);
+
+        @include input-placeholder {
+          color: $theme-grey;
+        }
+
+        &:focus {
+          border-color: $theme-dark;
+          @include box-shadow(0 0 0 4px darken($white, 5%));
+        }
+
+        &.error {
+          border-color: $theme-danger;
+        }
+
+        &.valid {
+          border-color: $theme-action;
+        }
+      }
+
+      .termText {
+        @include fontsize(12);
+        font-weight: 500;
+
+        a {
+          color: $theme;
+
+          &:hover {
+            color: darken($theme, 10%);
+          }
+        }
+      }
+
+      .forgotText {
+        @include fontsize(12);
+        font-weight: 500;
+        color: $theme-default;
+
+        &:hover {
+          color: darken($theme, 10%);
+        }
+      }
+
+      .button {
+        &:disabled {
+          color: $theme-grey;
+          background-color: darken($white, 10%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,326 @@
+.dashboardWrapper {
+  .widgetBlockNav {
+    @include display-flex;
+    @include align-items(flex-end);
+    @include pos(r, null);
+    @include margin-bottom(30);
+
+    @include media('<=575px') {
+      @include flex-direction(column);
+    }
+
+    .widgetBlock {
+      @include margin(10 15);
+      @include flex(1);
+      @include pos(r, null);
+      width: 100%;
+
+      @include media('<=575px') {
+        @include margin(10 0);
+      }
+
+      &:after {
+        content: "";
+        background-color: inherit;
+        height: 15px;
+        visibility: hidden;
+        @include translateY(-100%);
+        @include transition(all 0.4s);
+        @include opacity(0);
+        @include pos(ab, null 0 -7px);
+
+        @include media('<=575px') {
+          display: $n;
+        }
+      }
+
+      &:hover {
+        @include scale(1);
+      }
+
+      &:first-child {
+        @include margin-left(0);
+      }
+
+      &:last-of-type {
+        @include margin-right(0);
+      }
+
+      &.active {
+        &:after {
+          @include translateY(0);
+          @include opacity(1);
+          visibility: visible;
+        }
+      }
+
+      &.warning {
+        &.active {
+
+          &+._underLineWrap,
+          &~._underLineWrap {
+            @include opacity(1);
+            visibility: visible;
+            background-color: $theme-warning;
+          }
+        }
+      }
+
+      &.danger {
+        &.active {
+
+          &+._underLineWrap,
+          &~._underLineWrap {
+            @include opacity(1);
+            visibility: visible;
+            background-color: $theme-danger;
+          }
+        }
+      }
+
+      &.theme {
+        &.active {
+
+          &+._underLineWrap,
+          &~._underLineWrap {
+            @include opacity(1);
+            visibility: visible;
+            background-color: $theme;
+          }
+        }
+      }
+
+      .ico {
+        @include pos(ab, null 30px null null);
+
+        @include media('<=1300px') {
+          right: 10px;
+        }
+      }
+    }
+
+    ._underLineWrap {
+      height: 4px;
+      background-color: $theme-warning;
+      display: $b;
+      visibility: hidden;
+      @include opacity(0);
+      @include transition(all 0.4s);
+      @include pos(ab, null 0 0);
+    }
+  }
+
+  .widgetBlock {
+    color: $white;
+    @include transition(all 0.2s);
+    @include padding(25 30);
+    @include display-flex;
+    @include align-items(center);
+    @include radius(8px);
+    @include box-shadow(0 4px 8px 0 rgba($theme-grey, 0.27));
+    @include margin-bottom(30);
+
+    @include media('<=991px') {
+      @include padding(15);
+    }
+
+    @include media('<=767px') {
+      @include padding(10);
+      @include margin-bottom(15);
+    }
+
+    &:hover {
+      @include scale(1.07);
+      filter: brightness(90%);
+    }
+
+    &.warning {
+      background-color: $theme-warning;
+    }
+
+    &.danger {
+      background-color: $theme-danger;
+    }
+
+    &.theme {
+      background-color: $theme;
+    }
+
+    ._content {
+      @include flex(1);
+
+      h5 {
+        @include fontsize(16);
+
+        @include media('<=767px') {
+          @include fontsize(14);
+        }
+      }
+
+      ._count {
+        @include fontsize(44);
+        font-weight: 500;
+        line-height: 1;
+
+        @include media('<=991px') {
+          @include fontsize(40);
+        }
+
+        @include media('<=767px') {
+          @include fontsize(30);
+        }
+      }
+    }
+
+    .ico {
+      @include fontsize(50);
+      line-height: 1;
+
+      @include media('<=991px') {
+        @include fontsize(40);
+      }
+
+      @include media('<=767px') {
+        @include fontsize(30);
+      }
+    }
+  }
+
+  .dashboardTableWrap {
+    ._head {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include padding(8 30);
+      border-left: 2px solid $theme-dark;
+      background-color: $white;
+
+      h6 {
+        @include fontsize(16);
+        @include margin(5 0);
+        font-weight: 700;
+        color: $theme-dark;
+      }
+
+      a {
+        @include fontsize(12);
+        @include radius(4px);
+        @include padding(7 12);
+        display: $ib;
+        font-weight: 700;
+        border: 1px solid#ddf6ff;
+        color: $theme;
+
+        &:hover {
+          background-color: #ddf6ff;
+        }
+      }
+    }
+
+    .table {
+      border-collapse: separate;
+      border-spacing: 0 3px;
+
+      thead {
+        background-color: darken($white, 3%);
+
+        tr {
+          th {
+            @include fontsize(12);
+            @include padding(10 20);
+            white-space: nowrap;
+            font-weight: 500;
+            color: $theme-grey;
+
+            ._sort {
+              float: right;
+              color: inherit;
+              @include margin-left(10);
+
+              &:hover {
+                color: $theme;
+              }
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          background-color: $white;
+
+          td {
+            @include fontsize(14);
+            @include padding(10 20);
+            vertical-align: middle;
+            background-color: $white;
+
+            &:first-child {
+              @include padding-left(30);
+            }
+
+            &:last-child {
+              @include padding-right(30);
+            }
+
+            .actionDropdown {
+              @include pos(r, null);
+
+              &>a {
+                color: $theme-grey;
+                @include fontsize(20);
+
+                &:hover {
+                  color: $theme;
+                }
+              }
+
+              .dropdown-menu {
+                @include radius(0);
+                @include padding(0);
+
+                &>.dropdown-item {
+                  @include fontsize(14);
+                  @include padding-top(10);
+                  @include padding-bottom(10);
+
+                  &:hover {
+                    background-color: $theme;
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dashboardEmptyWrap {
+    @include radius(6px);
+    @include padding(60);
+    border: 2px dashed darken($white, 10%);
+
+    .imgBlk {
+      display: $ib;
+    }
+
+    h3 {
+      @include fontsize(24);
+      font-weight: 400;
+      color: $theme-grey;
+    }
+
+    p {
+      color: $theme-grey;
+
+      a {
+        color: $theme;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

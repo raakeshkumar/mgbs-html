@@ -1,0 +1,373 @@
+.layoutWrapper {
+  // @include display-flex;
+  @include experimental-value(min-height, calc(100vh));
+  @include pos(r, null);
+  @include padding-left(220);
+  @include transition(all 0.5s);
+
+  @include media('>=1024px', '<=1199px') {
+    @include padding-left(80);
+  }
+
+  @include media('<=1023px') {
+    @include padding-left(0);
+  }
+
+  aside {
+    &#aside {
+      width: 220px;
+      @include pos(f, 0 null 0 0);
+      @include transition(all 0.5s);
+
+      @include media('>=1024px', '<=1199px') {
+        width: 80px;
+      }
+
+      @include media('<=1023px') {
+        @include translateX(-100%);
+        @include opacity(0);
+        @include pos(f, null);
+        z-index: 100;
+      }
+
+      // @include flex(0 0 230px);
+    }
+  }
+
+  main {
+    width: 100%;
+    @include padding(0 30 30);
+    @include transition(all 0.5s);
+    // @include flex(1);
+
+    @include media('<=991px') {
+      @include padding(0 15 30);
+    }
+
+    .sectionHeader {
+      @include padding(35 0);
+
+      @include media('<=767px') {
+        @include padding(15 0);
+      }
+
+      .toggleNav {
+        @include pos(r, null);
+        display: $ib;
+
+        &:hover {
+          span {
+            background-color: $theme;
+          }
+        }
+
+        span {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: $theme-grey;
+          @include radius(2px);
+          @include margin(7 0);
+          @include transition(all 0.4s);
+
+          &:nth-child(2) {
+            width: 15px;
+          }
+        }
+      }
+
+      h1 {
+        @include margin(0);
+        @include fontsize(28);
+        font-weight: 400;
+
+        ._grey {
+          color: $theme-grey;
+        }
+
+        @include media('<=767px') {
+          @include fontsize(24);
+        }
+      }
+
+      h2 {
+        @include margin(0);
+        @include fontsize(24);
+        font-weight: 400;
+
+        @include media('<=767px') {
+          @include fontsize(22);
+        }
+      }
+    }
+  }
+}
+
+aside {
+  &#aside {
+    max-width: 230px;
+    background-color: $theme-dark;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include transition(all 0.5s);
+    // @include flex(0 0 230px);
+    @include display-flex;
+    @include flex-direction(column);
+
+    @include media('<=1023px') {
+      overflow-y: auto;
+    }
+
+    .brand {
+      @include padding(15 20);
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
+      min-height: 95px;
+      background-color: darken($theme-dark, 10%);
+
+      &>a {
+        @include flex(1);
+        max-width: 120px;
+
+        &>img {
+          max-height: 58px;
+        }
+      }
+
+      &>.brand-lg {
+        display: $b;
+
+        @include media('>=1024px', '<=1199px') {
+          display: $n;
+        }
+      }
+
+      &>.brand-sm {
+        display: $n;
+
+        @include media('>=1024px', '<=1199px') {
+          display: $b;
+        }
+      }
+    }
+
+    nav {
+      @include flex(1);
+
+      @include min-screen-height('767px') {
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include experimental-value(min-height, calc(100vh - 230px));
+      }
+
+      @include media('<=1023px') {
+        overflow: initial;
+      }
+
+      ul {
+        @include margin-top(30);
+
+        li {
+          @include padding(10 0);
+
+          &.active {
+            a {
+              background-color: $theme;
+              color: $white;
+              @include opacity(1);
+
+              &:hover {
+                background-color: $theme;
+                color: $white;
+                @include opacity(1);
+              }
+            }
+          }
+
+          a {
+            color: darken($white, 5%);
+            font-weight: 500;
+            display: $b;
+            white-space: nowrap;
+            @include opacity(0.6);
+            @include padding(20 30);
+
+            &:hover {
+              background-color: darken($theme-dark, 5%);
+              color: $white;
+              @include opacity(0.8);
+            }
+
+            i {
+              display: $ib;
+              vertical-align: middle;
+              line-height: 1;
+              @include fontsize(24);
+            }
+
+            span {
+              display: $ib;
+              vertical-align: middle;
+              @include transition(all 0.4s);
+              @include margin-left(15);
+
+              @include media('>=1024px', '<=1199px') {
+                @include opacity(0);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      &.bottomNav {
+        li {
+
+          a {
+            color: darken($white, 5%);
+            font-weight: 500;
+            display: $b;
+            white-space: nowrap;
+            @include opacity(0.6);
+            @include padding(20 30);
+
+            &:hover {
+              background-color: darken($theme-dark, 5%);
+            }
+
+            i {
+              display: $ib;
+              vertical-align: middle;
+              line-height: 1;
+              @include fontsize(24);
+            }
+
+            span {
+              display: $ib;
+              vertical-align: middle;
+              @include transition(all 0.4s);
+              @include margin-left(15);
+
+              @include media('>=1024px', '<=1199px') {
+                @include opacity(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  &.triggerMenu {
+    .layoutWrapper {
+      @include padding-left(80);
+
+      @include media('>=1024px', '<=1199px') {
+        @include padding-left(220);
+      }
+
+      @include media('<=1023px') {
+        @include padding-left(220);
+      }
+
+      aside {
+        &#aside {
+          // @include flex(0 0 90px);
+          width: 80px;
+
+          @include media('>=1024px', '<=1199px') {
+            width: 220px;
+          }
+
+          @include media('<=1023px') {
+            width: 220px;
+            @include opacity(1);
+            @include translateX(0);
+          }
+
+          .brand {
+            &>.brand-lg {
+              display: $n;
+
+              @include media('>=1024px', '<=1199px') {
+                display: $b;
+              }
+
+              @include media('<=1023px') {
+                display: $b;
+              }
+            }
+
+            &>.brand-sm {
+              display: $b;
+
+              @include media('>=1024px', '<=1199px') {
+                display: $n;
+              }
+
+              @include media('<=1023px') {
+                display: $n;
+              }
+            }
+          }
+
+          nav {
+            ul {
+              li {
+                a {
+                  span {
+                    // @include translateX(30px);
+                    @include opacity(0);
+
+                    @include media('>=1024px', '<=1199px') {
+                      @include opacity(1);
+                    }
+
+                    @include media('<=1023px') {
+                      @include opacity(1);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ul {
+            &.bottomNav {
+              li {
+                a {
+                  span {
+                    // @include translateX(30px);
+                    @include opacity(0);
+
+                    @include media('>=1024px', '<=1199px') {
+                      @include opacity(1);
+                    }
+
+                    @include media('<=1023px') {
+                      @include opacity(1);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      main {
+        // @include media('>=1024px', '<=1199px') {
+        //   @include experimental-value(width, calc(100% + 220px));
+        // }
+
+        @include media('<=1023px') {
+          @include experimental-value(width, calc(100% + 220px));
+        }
+      }
+    }
+  }
+}
