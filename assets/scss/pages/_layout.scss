@@ -264,7 +264,7 @@ aside {
 body {
   &.triggerMenu {
     .layoutWrapper {
-      @include padding-left(80);
+      @include padding-left(95);
 
       @include media('>=1024px', '<=1199px') {
         @include padding-left(220);
@@ -277,7 +277,7 @@ body {
       aside {
         &#aside {
           // @include flex(0 0 90px);
-          width: 80px;
+          width: 95px;
 
           @include media('>=1024px', '<=1199px') {
             width: 220px;

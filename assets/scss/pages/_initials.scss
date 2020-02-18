@@ -6,6 +6,7 @@
   .logoText {
     display: $ib;
     font-family: $font-alt;
+    max-width: 170px;
     @include margin(20 0);
     @include fontsize(28);
 
@@ -93,6 +94,15 @@
         }
       }
 
+      select {
+        &.form-control {
+          @media screen and (-webkit-min-device-pixel-ratio:0) {
+            -webkit-appearance: menu-item;
+            line-height: 38px;
+          }
+        }
+      }
+
       .termText {
         @include fontsize(12);
         font-weight: 500;
@@ -117,6 +127,8 @@
       }
 
       .button {
+        @include radius(4px);
+
         &:disabled {
           color: $theme-grey;
           background-color: darken($white, 10%);

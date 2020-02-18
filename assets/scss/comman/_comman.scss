@@ -71,6 +71,10 @@ main {
     width: 100%;
   }
 
+  &-status {
+    pointer-events: none;
+  }
+
   &-default {
     background-color: $theme-grey;
     color: $white;

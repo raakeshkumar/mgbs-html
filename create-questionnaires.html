@@ -85,8 +85,8 @@
 
         <div class="questionnariesWrapper">
           <div class="createFormWrap">
-            <a href="all-questionnaires.html" class="backButton button button-theme"><i
-                class="icon-arrow-left p-t2"></i></a>
+            <a href="javascript:void(0);" class="backButton button button-theme" data-toggle="modal" data-target="#goBackPop"><i
+              class="icon-arrow-left p-t2"></i></a>
             <div class="row">
               <div class="col-12 col-xl-9">
                 <form action="" id="createQuestionnariesForm">
@@ -113,7 +113,7 @@
                       <div class="form-group">
                         <label>Start Date</label>
                         <div class="_datePickerInput">
-                          <input type="text" class="form-control" data-provide="datepicker" id="start_date"
+                          <input type="text" class="form-control datepicker" data-provide="datepicker" id="start_date"
                             name="start_date" required>
                         </div>
                       </div>
@@ -122,7 +122,7 @@
                       <div class="form-group">
                         <label>End Date</label>
                         <div class="_datePickerInput">
-                          <input type="text" class="form-control" data-provide="datepicker" id="end_date"
+                          <input type="text" class="form-control datepicker" data-provide="datepicker" id="end_date"
                             name="end_date" required>
                         </div>
                       </div>
@@ -142,6 +142,22 @@
     </main>
   </div>
 
+  <div class="modal fade alertModal" tabindex="-1" role="dialog" id="goBackPop">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="bodyWrap">
+            <i class="_icon danger icon-close-outline"></i>
+            <p>Leaving this page will discard unsaved changes, please confirm!</p>
+            <button type="button"
+              class="button button-success button-rounded button-shadow button-min-100 text-uppercase mt-3"
+              data-dismiss="modal" onclick="window.location.href='all-questionnaires.html'">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   <!-- Javascripts -->
@@ -152,6 +168,12 @@
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="./assets/js/theme.js"></script>
+  <script>
+    $('.datepicker').datepicker({
+      format: "dd/mm/yyyy",
+      autoclose: true,
+    })
+  </script>
 
 </body>
 

@@ -247,6 +247,7 @@
       tbody {
         tr {
           background-color: $white;
+          cursor: pointer;
 
           td {
             @include fontsize(14);
@@ -260,6 +261,12 @@
 
             &:last-child {
               @include padding-right(30);
+            }
+
+            label {
+              &.button {
+                @include margin-bottom(0);
+              }
             }
 
             .actionDropdown {
