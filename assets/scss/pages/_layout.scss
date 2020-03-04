@@ -225,6 +225,20 @@ aside {
       &.bottomNav {
         li {
 
+          &.active {
+            a {
+              background-color: $theme;
+              color: $white;
+              @include opacity(1);
+
+              &:hover {
+                background-color: $theme;
+                color: $white;
+                @include opacity(1);
+              }
+            }
+          }
+
           a {
             color: darken($white, 5%);
             font-weight: 500;

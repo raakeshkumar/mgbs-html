@@ -1,0 +1,44 @@
+.contactUsWrapper {
+  @include pos(r, null);
+  background-color: $white;
+
+  .contactBanner {
+    @include gradient-vertical(#a9e8ff, #f1f8ff, 0%, 100%);
+    @include padding(85 15);
+
+    img {
+      max-width: 125px;
+      max-height: 125px;
+    }
+
+    h2 {
+      @include fontsize(32);
+      @include margin(15 0 0);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
+
+  .contactContentWrap {
+    @include padding(85 15);
+
+    ._content {
+      max-width: 400px;
+      margin: $za;
+
+      p {
+        color: $theme-grey;
+      }
+
+      h6 {
+        @include fontsize(22);
+        @include margin-top(30);
+        color: $theme;
+
+        @include media('<=575px') {
+          @include fontsize(20);
+        }
+      }
+    }
+  }
+}

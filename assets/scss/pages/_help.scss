@@ -1,0 +1,271 @@
+.helpWrapper {
+  @include pos(r, null);
+  background-color: $white;
+
+  .helpBanner {
+    @include gradient-vertical(#a9e8ff, #f1f8ff, 0%, 100%);
+    @include padding(0 40);
+
+    @include media('<=1199px') {
+      @include padding(0 20);
+    }
+
+    @include media('<=991px') {
+      text-align: center;
+    }
+
+    ._content {
+      max-width: 520px;
+      @include padding(10 0);
+
+      @include media('<=991px') {
+        @include max-width-auto;
+        @include padding(30 0 10);
+      }
+
+      h2 {
+        @include fontsize(42);
+        @include margin-bottom(15);
+        font-weight: 700;
+        line-height: 1.1;
+
+        @include media('<=1199px') {
+          @include fontsize(30);
+        }
+      }
+
+      p {
+        color: $theme-grey;
+      }
+    }
+  }
+
+  .howtoUseSection {
+    @include padding(50 40);
+
+    @include media('<=1199px') {
+      @include padding(30 20);
+    }
+
+    h2 {
+      @include fontsize(32);
+      @include margin-bottom(50);
+
+      @include media('<=991px') {
+        @include fontsize(26);
+      }
+    }
+
+    ._rows {
+      &>[class^="col-"] {
+        @include padding-top(30);
+        @include padding-bottom(30);
+      }
+    }
+
+    ._blk {
+      min-height: 100%;
+      border: 1px solid #f2f2f2;
+      @include padding(20);
+
+      @include media('<=767px') {
+        text-align: center;
+      }
+
+      &>span {
+        @include square(82px);
+        @include radius(50%);
+        @include margin-bottom(20);
+        @include margin-top(-61);
+        display: $b;
+        line-height: 82px;
+        text-align: center;
+        box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.06);
+        background-color: #ffffff;
+
+        @include media('<=767px') {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &>h4 {
+        color: $theme;
+        @include fontsize(22);
+      }
+
+      &>p {
+        @include fontsize(18);
+        color: #2b2d3a;
+        font-weight: 500;
+
+        @include media('<=991px') {
+          @include fontsize(16);
+        }
+      }
+    }
+  }
+
+  .featuresWrapper {
+    @include padding(50 40);
+
+    @include media('<=1199px') {
+      @include padding(30 20);
+    }
+
+    @include media('<=767px') {
+      text-align: center;
+    }
+
+    h2 {
+      @include fontsize(32);
+      @include margin-bottom(20);
+
+      @include media('<=991px') {
+        @include fontsize(26);
+      }
+    }
+
+    ._rows {
+      @include padding-top(50);
+      @include padding-bottom(50);
+
+      @include media('<=767px') {
+        @include padding-top(10);
+        @include padding-bottom(10);
+      }
+    }
+
+    ._content {
+      // max-width: 400px;
+      @include padding(0 70 0 20);
+
+      @include media('<=1600px') {
+        @include padding-right(50);
+      }
+
+      @include media('<=1300px') {
+        @include padding-right(20);
+      }
+
+      @include media('<=1199px') {
+        @include padding(0);
+      }
+
+      ._icon {
+        @include margin-bottom(20);
+        @include radius(50%);
+        @include square(52px);
+        line-height: 52px;
+        text-align: center;
+        background-color: $theme-danger;
+        display: $ib;
+
+        &._theme {
+          background-color: $theme;
+        }
+      }
+
+      h3 {
+        @include fontsize(24);
+        font-weight: 700;
+
+        @include media('<=991px') {
+          @include fontsize(22);
+        }
+      }
+
+      p {
+        color: $theme-grey;
+      }
+    }
+  }
+
+  .helpButtomWrapper {
+    @include padding(65 40);
+    background-color: #e5f7fd;
+
+    @include media('<=1199px') {
+      @include padding(30 20);
+    }
+
+    @include media('<=767px') {
+      text-align: center;
+
+      &>.row {
+        &>[class^="col-"] {
+          @include padding-top(15);
+          @include padding-bottom(15);
+        }
+      }
+    }
+
+    ._icon {
+      @include square(62px);
+      @include margin-bottom(20);
+      @include radius(50%);
+      text-align: center;
+      line-height: 62px;
+      display: $ib;
+      background-color: $white;
+
+      img {
+        max-width: 36px;
+        max-height: 36px;
+      }
+    }
+
+    h4 {
+      @include fontsize(24);
+      font-weight: 700;
+      color: $theme-dark;
+
+      @include media('<=991px') {
+        @include fontsize(22);
+      }
+    }
+
+    p {
+      color: $theme-grey;
+    }
+  }
+
+  .helpContactWrapper {
+    @include padding(55 40);
+    background-color: $theme-dark;
+    text-align: center;
+
+    @include media('<=1199px') {
+      @include padding(30 20);
+    }
+
+    ._emailIcon {
+      max-width: 66px;
+      max-height: 66px;
+      @include margin-bottom(15);
+    }
+
+    h3 {
+      @include fontsize(32);
+      font-weight: 700;
+      color: $white;
+
+      @include media('<=991px') {
+        @include fontsize(26);
+      }
+    }
+
+    p {
+      color: $theme-grey;
+      @include fontsize(18);
+
+      @include media('<=991px') {
+        @include fontsize(16);
+      }
+
+      a {
+        color: $theme;
+      }
+    }
+  }
+}
