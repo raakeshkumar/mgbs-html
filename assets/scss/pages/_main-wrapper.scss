@@ -148,6 +148,10 @@
           font-weight: 500;
           color: $theme-grey;
 
+          &.min150 {
+            min-width: 150px;
+          }
+
           ._sort {
             float: right;
             color: inherit;
@@ -164,7 +168,13 @@
     tbody {
       tr {
         background-color: $white;
-        cursor: pointer;
+
+        // cursor: pointer;
+        &.pointer {
+          td {
+            cursor: pointer;
+          }
+        }
 
         td {
           @include fontsize(14);
@@ -172,6 +182,14 @@
           @include pos(r, null);
           vertical-align: middle;
           background-color: $white;
+
+          &.noPointer {
+            cursor: initial;
+          }
+
+          &.breakWord {
+            word-break: break-all;
+          }
 
           &:first-child {
             @include padding-left(30);

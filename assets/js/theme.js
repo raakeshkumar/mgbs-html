@@ -18,7 +18,7 @@
 					$('body').toggleClass('triggerMenu');
 					e.stopPropagation();
 					e.preventDefault();
-				} else if (!$(e.target).closest('main, #aside').length) {
+				} else if (!$(e.target).closest('body, #aside').length) {
 					$('body').removeClass('triggerMenu');
 				} else if ($(e.target).closest('#aside ul li a').length) {
 					$('body').removeClass('triggerMenu');

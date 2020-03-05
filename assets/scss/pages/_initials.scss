@@ -6,7 +6,7 @@
   .logoText {
     display: $ib;
     font-family: $font-alt;
-    max-width: 170px;
+    max-width: 200px;
     @include margin(20 0);
     @include fontsize(28);
 
