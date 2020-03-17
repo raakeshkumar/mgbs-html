@@ -1,0 +1,22 @@
+.staticPageWrapper {
+  background-color: $white;
+  min-height: 100%;
+  @include experimental-value(min-height, calc(100vh - 35px));
+  @include padding-bottom(15);
+
+  .logoText {
+    display: $ib;
+    max-width: 200px;
+  }
+
+  h1 {
+    @include fontsize(32);
+    @include margin-bottom(25);
+    color: $theme;
+    font-weight: 700;
+
+    @include media('<=767px') {
+      @include fontsize(26);
+    }
+  }
+}

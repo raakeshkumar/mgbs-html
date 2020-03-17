@@ -38,6 +38,7 @@
     width: 100%;
     @include padding(0 30 30);
     @include transition(all 0.5s);
+    @include experimental-value(min-height, calc(100vh - 35px));
     // @include flex(1);
 
     @include media('<=991px') {
@@ -203,6 +204,7 @@ aside {
               display: $ib;
               vertical-align: middle;
               line-height: 1;
+              width: 26px;
               @include fontsize(24);
             }
 

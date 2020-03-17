@@ -1,7 +1,8 @@
 .initialFormWrapper {
   background-color: $white;
   min-height: 100%;
-  @include experimental-value(min-height, calc(100vh));
+  @include experimental-value(min-height, calc(100vh - 35px));
+  @include padding-bottom(15);
 
   .logoText {
     display: $ib;
@@ -96,10 +97,18 @@
 
       select {
         &.form-control {
-          @media screen and (-webkit-min-device-pixel-ratio:0) {
-            -webkit-appearance: menu-item;
-            line-height: 38px;
-          }
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-image: url('#{$url}arrow-down.png');
+          background-repeat: no-repeat;
+          background-position: calc(100% - 7px) center;
+          background-size: 11px;
+          @include padding-right(24);
+          // @media screen and (-webkit-min-device-pixel-ratio:0) {
+          //   -webkit-appearance: menu-item;
+          //   line-height: 38px;
+          // }
         }
       }
 
@@ -136,4 +145,11 @@
       }
     }
   }
+}
+
+.copyrightFooter {
+  text-align: center;
+  font-size: 10px;
+  @include padding(10);
+  @include margin-bottom(0);
 }
